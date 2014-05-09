@@ -1,0 +1,35 @@
+<h4>dealer's hand</h4>
+
+<div class="well">
+  <ul class="thumbnails">
+    <% session[:dealer_hand].each_with_index do |card, i| %>
+
+      <li>
+        <% if i == 0 && @player_turn %>
+        <img class="thumbnail" src="/images/cards/cover.jpg" alt="Hidden Card">
+        <% else %>
+        <img class="thumbnail" src="/images/cards/<%= card_file_name(card) %>.jpg" alt="<%= card_full_name(card) %>">
+        <% end %>
+      </li>
+
+    <% end %>    
+  </ul>
+</div>
+<% if !@player_turn %>
+  <p><%= count_points(session[:dealer_hand]) %></p>
+<% else %>
+  <p>?</p>
+<% end %>
+
+<h4>player's hand</h4>
+
+<div class="well">
+  <ul class="thumbnails">
+    <% session[:player_hand].each do |card| %>
+
+      <li><img class="thumbnail" src="/images/cards/<%= card_file_name(card) %>.jpg" alt="<%= card_full_name(card) %>"></li>
+
+    <% end %>
+  </ul>
+</div>
+<p><%= count_points(session[:player_hand]) %></p>

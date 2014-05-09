@@ -1,0 +1,19 @@
+<form action="/welcome" method="POST">
+  <p>Please input your bet:</p>
+  <input type="text" name="bet_much" value="100" /><br /> 
+  <p><%= session[:user_name] %>'s balance <%= session[:player_balance] %>.</p> 
+  <input type="submit" class="btn" value="round start" />
+</form> 
+
+<div class="progress">
+  <% if session[:player_balance]/5 >= 120 %>
+    <div class="bar bar-success" style="width: <%= session[:player_balance]/20 %>%;"></div>
+  <% elsif session[:player_balance]/5 > 90 %>
+    <div class="bar bar" style="width: <%= session[:player_balance]/20 %>%;"></div>  
+   <% elsif session[:player_balance]/5 > 60 %>
+    <div class="bar bar-warning" style="width: <%= session[:player_balance]/20 %>%;"></div>
+  <% else %>
+    <div class="bar bar-danger" style="width: <%= session[:player_balance]/20 %>%;"></div>
+  <% end %>
+</div>
+

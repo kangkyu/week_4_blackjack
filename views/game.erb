@@ -1,0 +1,12 @@
+
+<%= erb(:_show_table, :layout => false) %>
+
+<form action="/game" method="POST">
+  <div class="btn-group">
+    <button type="submit" name="hit_or_stay" value="hit" class="btn"><strong>hit</strong></button>
+    <button type="submit" name="hit_or_stay" value="stay" class="btn btn-inverse">stay</button>
+  </div>
+</form>
+
+<h4>Player has <%= session[:player_balance] %></h4>
+<p>Bet <%= session[:bet_much] %></p>

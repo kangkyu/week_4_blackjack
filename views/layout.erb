@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First App - 21</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/application.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body style="padding-top: 50px;">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+              <li><a href="/"><strong>Black Jack Game</strong></a></li>
+              <% if @show_navbar %>  
+              <li><a href="/welcome">New Game</a></li>
+              <li><a href="/leave">Leave</a></li>
+              <% end %>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%if @error %>
+        <div class="alert alert-error"><%=@error%></div>
+      <% end %>
+      <%if @success %>
+        <div class="alert alert-success"><%=@success%></div>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>
