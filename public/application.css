@@ -1,14 +1,32 @@
-ul.thumbnails {
+.well {
+  margin-bottom: 0;
+}
 
+ul.thumbnails {
+  display: inline-block;
   height: 160px;
+
 }
 
 img.thumbnail {
-
   max-height: 100%;
 }
 
 .btn-large {
-
   margin-left: 10px;
+}
+
+div.flipper {
+  position: relative;
+  margin: 0 auto;
+  height: 160px;
+  width: 120px;
+}
+
+div.flipper div {
+  position: absolute;
+}
+
+img.side-a {
+  z-index: 100;
 }

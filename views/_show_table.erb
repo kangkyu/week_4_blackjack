@@ -6,7 +6,12 @@
 
       <li>
         <% if i == 0 && @player_turn %>
-        <img class="thumbnail" src="/images/cards/cover.jpg" alt="Hidden Card">
+
+        <div class="flipper">
+          <div><img class="side-a thumbnail" src="/images/cards/cover.jpg" alt="Card Hidden"></div>
+          <div><img class="side-b thumbnail" src="/images/cards/<%= card_file_name(card) %>.jpg" alt="<%= card_full_name(card) %>"></div>
+        </div>
+
         <% else %>
         <img class="thumbnail" src="/images/cards/<%= card_file_name(card) %>.jpg" alt="<%= card_full_name(card) %>">
         <% end %>
